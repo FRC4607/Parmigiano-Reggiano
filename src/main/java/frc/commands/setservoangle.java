@@ -35,9 +35,9 @@ public class setservoangle extends Command {
      buttonlastpesseed = Robot.timercount;
     }
     if (buttonlastpesseed != 0 && buttonlastpesseed > Robot.timercount - 50){
-      m_Launcher.setServoAngle(0.0);
+      m_Launcher.setServoAngle(85.0);
     }else {
-      m_Launcher.setServoAngle(65.0);
+      m_Launcher.setServoAngle(30.0);
 
     }
   }

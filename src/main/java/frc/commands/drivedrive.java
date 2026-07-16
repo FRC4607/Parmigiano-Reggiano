@@ -7,6 +7,7 @@ import javax.naming.directory.DirContext;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
+import frc.robot.cheese;
 import frc.robot.cheese.drive;
 import frc.robot.subsystems.Drive;
 
@@ -34,8 +35,12 @@ public class drivedrive extends Command{
     }
     @Override
     public void execute(){
-        m_drive.setDriveSpeeds(m_controller.getLeftY(), -m_controller.getRightY());
+        if (cheese.drive.CONTROLL_WITH_ONE_STICK){
+            m_drive.setDriveSpeeds(m_controller.getRightY() - m_controller.getRightX(), m_controller.getRightY() + m_controller.getRightX());
 
+        } else {
+        m_drive.setDriveSpeeds(m_controller.getLeftY(), -m_controller.getRightY());
+        }
     }
     @Override
     public void end(boolean interrupted){
