@@ -36,7 +36,7 @@ public class drivedrive extends Command{
     @Override
     public void execute(){
         if (cheese.drive.CONTROLL_WITH_ONE_STICK){
-            m_drive.setDriveSpeeds(m_controller.getRightY() - m_controller.getRightX(), m_controller.getRightY() + m_controller.getRightX());
+            m_drive.setDriveSpeeds(((-m_controller.getRightX() * 0.5) + m_controller.getLeftY()) * 1, ((-m_controller.getRightX() * 0.5) - m_controller.getLeftY()) * 1);
 
         } else {
         m_drive.setDriveSpeeds(m_controller.getLeftY(), -m_controller.getRightY());
